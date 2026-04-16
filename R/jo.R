@@ -27,14 +27,12 @@ total_medailles_pays <- function(data) {
 #' @param data data.frame des resultats
 #' @param top_n nombre de pays affiches
 #' @return un graphique ggplot
-#' @import ggplot2
+#' @importFrom ggplot2 reorder
 #' @importFrom utils head
-#' @importFrom stats reorder
 #' @export
 plot_medailles_pays <- function(data, top_n = 10) {
 
   df <- total_medailles_pays(data)
-
   df <- df[order(df$Total, decreasing = TRUE), ]
   df <- head(df, top_n)
 
