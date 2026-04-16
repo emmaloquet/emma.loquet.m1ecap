@@ -1,32 +1,35 @@
-#' Filtrer les médailles par discipline et pays
+#' Filtrer les medailles par discipline et pays
 #'
-#' @param data data.frame des résultats olympiques
+#' @param data data.frame des résultats
 #' @param sport discipline sportive à filtrer
 #' @param country pays (NOC) à filtrer
 #'
-#' @return data.frame filtré
+#' @return data.frame filtre
 #' @export
 filtrer_medailles <- function(data, sport, country) {
   data[data$Competitions == sport & data$NOC == country, ]
 }
 
 
-#' Calcul du total de médailles par pays
+#' Calcul du total de medailles par pays
 #'
-#' @param data data.frame des résultats
+#' @param data data.frame des resultats
 #'
-#' @return data.frame agrégé
+#' @return data.frame agrege
+#' @importFrom stats aggregate
 #' @export
 total_medailles_pays <- function(data) {
   aggregate(Total ~ NOC, data = data, sum)
 }
 
-#' Graphique des médailles par pays
+#' Graphique des medailles par pays
 #'
-#' @param data data.frame des résultats olympiques
-#' @param top_n nombre de pays affichés
+#' @param data data.frame des resultats
+#' @param top_n nombre de pays affiches
 #' @return un graphique ggplot
 #' @import ggplot2
+#' @importFrom utils head
+#' @importFrom stats reorder
 #' @export
 plot_medailles_pays <- function(data, top_n = 10) {
 
@@ -40,7 +43,7 @@ plot_medailles_pays <- function(data, top_n = 10) {
     coord_flip() +
     labs(
       x = "Pays",
-      y = "Total des médailles",
-      title = "Médailles par pays"
+      y = "Total des medailles",
+      title = "Medailles par pays"
     )
 }
