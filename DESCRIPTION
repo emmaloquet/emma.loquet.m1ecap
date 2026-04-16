@@ -1,9 +1,9 @@
 Package: emma.loquet.m1ecap
-Title: What the Package Does (One Line, Title Case)
+Title: Analyse des médailles obtenues aux JO 2024 par discipline et par pays
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+    person("Emma", "Loquet", , "eloquet88@gmail.com", role = c("aut", "cre"))
+Description: Package d’analyse de données de médailles olympiques par discipline et pays.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Encoding: UTF-8
